@@ -42,22 +42,31 @@
         height: 100%;
         border: none;
       }
-      /* Container específico para a logo (4ª tela) */
+
+      /* --- MUDANÇA AQUI: Container da Logo BLINDADO --- */
       .logo-container {
-        display: flex;
-        justify-content: center; /* Centraliza horizontalmente */
-        align-items: center; /* Centraliza verticalmente */
+        position: relative; /* Necessário para prender a imagem dentro */
         background-color: #000; /* Fundo preto */
-        border: 1px solid #111; /* Borda sutil para alinhar com os outros */
+        border: 1px solid #111; /* Borda sutil */
         box-sizing: border-box;
-        padding: 20px; /* Espaço extra ao redor da logo */
+        overflow: hidden; /* Garante que nada saia para fora do quadrado */
       }
-      /* Estilo da imagem da logo para ficar menor e centralizada */
+
+      /* --- MUDANÇA AQUI: Estilo da imagem para não quebrar --- */
       .logo-img {
-        /* Reduzido para 70% para ficar menor no quadrado */
+        position: absolute; /* Tira a imagem do fluxo normal e a prende no container */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Centralização perfeita */
+
+        /* Define o tamanho máximo que ela pode ter dentro do quadrado */
         max-width: 70%;
         max-height: 70%;
-        object-fit: contain; /* Garante que a logo inteira apareça sem distorcer */
+
+        /* Garante que a proporção da imagem original seja mantida */
+        width: auto;
+        height: auto;
+        object-fit: contain;
       }
     </style>
   </head>
@@ -89,7 +98,7 @@
 
       <div class="logo-container">
         <img
-          src="brasão_colorido.png"
+          src="brasao_novo.png"
           alt="Brasão de Balneário Piçarras"
           class="logo-img"
         />
