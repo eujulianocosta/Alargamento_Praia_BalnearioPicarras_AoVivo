@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>
+      Transmissão ao vivo da obra de alargamento da Praia Central de Balneário
+      Piçarras/SC
+    </title>
+    <style>
+      /* Zera margens e define fundo preto geral */
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background-color: #000;
+        overflow: hidden; /* Esconde barras de rolagem na TV */
+      }
+      /* Cria a grade 2x2 que ocupa exatamente toda a tela */
+      .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Duas colunas de larguras iguais */
+        grid-template-rows: 1fr 1fr; /* Duas linhas de alturas iguais */
+        height: 100vh;
+        width: 100vw;
+        background-color: #000;
+      }
+      /* Container para os vídeos das câmeras */
+      .video-box {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border: 1px solid #111; /* Borda sutil para separar os vídeos */
+        box-sizing: border-box; /* Garante que a borda não aumente o tamanho total */
+      }
+      /* Faz o iframe ocupar 100% do seu container */
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+      /* Container específico para a logo (4ª tela) */
+      .logo-container {
+        display: flex;
+        justify-content: center; /* Centraliza horizontalmente */
+        align-items: center; /* Centraliza verticalmente */
+        background-color: #000; /* Fundo preto */
+        border: 1px solid #111; /* Borda sutil para alinhar com os outros */
+        box-sizing: border-box;
+        padding: 20px; /* Espaço extra ao redor da logo */
+      }
+      /* Estilo da imagem da logo para ficar menor e centralizada */
+      .logo-img {
+        /* Reduzido para 70% para ficar menor no quadrado */
+        max-width: 70%;
+        max-height: 70%;
+        object-fit: contain; /* Garante que a logo inteira apareça sem distorcer */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="video-box">
+        <iframe
+          src="https://www.youtube.com/embed/Aq0ImCTiTmE?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <div class="video-box">
+        <iframe
+          src="https://www.youtube.com/embed/O3n_BAQ93eE?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <div class="video-box">
+        <iframe
+          src="https://www.youtube.com/embed/-txzzJ9AhWo?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <div class="logo-container">
+        <img
+          src="brasão_colorido.png"
+          alt="Brasão de Balneário Piçarras"
+          class="logo-img"
+        />
+      </div>
+    </div>
+  </body>
+</html>
